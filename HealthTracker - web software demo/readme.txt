@@ -1,5 +1,8 @@
-Online location of application:
+Web Software project "Health Tracker" for Codeblock Oy. 
 
+The application tracks the users' health with user inputted values for sleep, exercise and eating. 
+Health Tracker utilizes APIs and databases in the storing of user data. Health Tracker is currently down, 
+but below are instructions for running the application locally.
 
 
 
