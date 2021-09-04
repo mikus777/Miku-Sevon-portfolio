@@ -1,0 +1,19 @@
+<%- include('./partials/header.ejs') %>
+<h1>HealthTracker</h1>
+<p>How to use HealthTracker:
+<li>With the 'Report!' button you can report your daily statistics such as sleeping time and we will do the rest!</li>
+<li>After reporting, use 'Summary' to view your statistics from any given week or month.</li>
+</p>
+<form method="GET" action="/behaviour/reporting">
+    <input type="submit" value="Report!"/>
+</form>
+<form method="GET" action="/summary">
+    <input type="submit" value="Summary" />
+</form>
+<p>Our users average mood today: <%= averageMoodToday %></p>
+<p>Our users average mood yesterday: <%= averageMoodYesterday %></p>
+<% if (averageMoodToday > averageMoodYesterday) { %>
+    <p>Things are looking bright today!</p>
+<% } else if (averageMoodToday < averageMoodYesterday) { %>
+    <p>Things are looking gloomy today...</p>
+<% } %>

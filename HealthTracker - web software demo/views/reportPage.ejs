@@ -1,0 +1,23 @@
+<%- include('./partials/header.ejs') %>
+
+<h1>Would you like to report morning or evening?</h1>
+
+<form method="GET" action="/behaviour/reporting/morning">
+    <input type="submit" value="Report your morning!" />
+</form>
+
+
+<% if (morning == true) { %>
+    <p>You have already reported statistics for todays morning. You can still report statistic for an another morning if you want to.</p>
+<% } %>
+
+<form method="GET" action="/behaviour/reporting/evening">
+    <input type="submit" value="Report your evening!" />
+</form>
+
+<% if (evening == true) { %>
+    <p>You have already reported statistics for todays evening. You can still report statistic for an another evening if you want to.</p>
+<% } %>
+
+<%- include('./partials/footer.ejs') %>
+

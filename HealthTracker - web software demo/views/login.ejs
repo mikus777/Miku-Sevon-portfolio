@@ -1,0 +1,21 @@
+<h1>Login!</h1>
+<form method="POST" action="/auth/login">
+    <label for="email">Email-address:</label>
+    <input type="email" name="email" />
+    <label for="password">Password:</label>
+    <input type="password" name="password" />
+    <input type="submit" value="Login!" />
+</form>
+<form method="GET" action="/auth/registration">
+    <input type="submit" value="Don't have an user? Register here." />
+</form>
+
+<% if (errors && errors.length > 0) { %>
+    <ul>
+      <% errors.forEach((error) => { %>
+        <li><%= error %></li>
+      <% }); %>
+    </ul>
+<% } %>
+
+<%- include('./partials/footer.ejs') %>

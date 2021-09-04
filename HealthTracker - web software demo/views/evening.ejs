@@ -1,0 +1,22 @@
+<%- include('./partials/header.ejs') %>
+
+<form method="POST" action="/behaviour/reporting/evening/post">
+    <label>
+        <p>Current date:</p>
+        <input type="date" name="day" value="<%=date %>">
+        <p>Time spent on exercise and sports in hours:</p>
+        <input type="number" name="exerciseTime" min="0" value="0"/>
+        <p>Time spent studying in hours:</p>
+        <input type="number" name="studyingTime" min="0" value="0"/>
+        <p>Regularity of eating:</p>
+        <input id="rangeInput1" type="range" name="reqularityOfEating" min="1" max="5" value="1" oninput="amount1.value=rangeInput1.value"/>
+        <output id="amount1" name="amount" for="rangeInput2">1</output>
+        <p>Quality of eating:</p>
+        <input id="rangeInput2" type="range" name="qualityOfEating" min="1" max="5" value="1" oninput="amount2.value=rangeInput2.value"/>
+        <output id="amount2" name="amount" for="rangeInput2">1</output>
+        <p>Generic mood:</p>
+        <input id="rangeInput3" type="range" name="GenericMood" min="1" max="5" value="1" oninput="amount3.value=rangeInput3.value"/>
+        <output id="amount3" name="amount" for="rangeInput2">1</output>
+        <input type="submit" value="Report!">
+  </label>
+</form>

@@ -1,0 +1,43 @@
+<%- include('./partials/header.ejs') %>
+
+<h1>What would you like to do?</h1>
+<form method="POST" action="/summary">
+    <p>
+    Select week: <input type="week" name="week" value="<%= week %>"/>
+    </p>
+    <lu>Statistics for the week:</lu>
+    <% if (weeklySummary.sleep_duration == 0 && weeklySummary.sleep_quality == 0 && weeklySummary.generic_mood_morning == 0 && weeklySummary.exercise_time == 0 && weeklySummary.studying_time == 0 && weeklySummary.eating_reqularity == 0 && weeklySummary.eating_quality == 0 && weeklySummary.generic_mood_evening == 0) { %>
+        <li>No data for given week exists.</li>
+    <% } else { %>
+    <li> Average sleep duration <%= weeklySummary.sleep_duration %> hour(s)</li>
+    <li> Average sleep quality <%= weeklySummary.sleep_quality %> </li>
+    <li> Average generic mood on morning <%= weeklySummary.generic_mood_morning %> </li>
+    <li> Average exercise time <%= weeklySummary.exercise_time %> hour(s)</li>
+    <li> Average studying time  <%= weeklySummary.studying_time %> hour(s)</li>
+    <li> Average eating reqularity  <%= weeklySummary.eating_reqularity %> </li>
+    <li> Average eating quality <%= weeklySummary.eating_quality %> </li>
+    <li> Average generic mood on evening <%= weeklySummary.generic_mood_evening %> </li>
+    <% } %>
+    <p>
+    Select Month: <input type="month" name="month" value="<%= month %>" />
+    </p>
+    <lu>Statistics for the month:</lu>
+    <% if (monthlySummary.sleep_duration == 0 && monthlySummary.sleep_quality == 0 && monthlySummary.generic_mood_morning == 0 && monthlySummary.exercise_time == 0 && monthlySummary.studying_time == 0 && monthlySummary.eating_reqularity == 0 && monthlySummary.eating_quality == 0 && monthlySummary.generic_mood_evening == 0) { %>
+        <li>No data for given month exists.</li>
+    <% } else { %>
+    <li> Average sleep duration <%= monthlySummary.sleep_duration %> hour(s)</li>
+    <li> Average sleep quality <%= monthlySummary.sleep_quality %> </li>
+    <li> Average generic mood on morning <%= monthlySummary.generic_mood_morning %> </li>
+    <li> Average exercise time <%= monthlySummary.exercise_time %> hour(s)</li>
+    <li> Average studying time  <%= monthlySummary.studying_time %> hour(s)</li>
+    <li> Average eating reqularity  <%= monthlySummary.eating_reqularity %> </li>
+    <li> Average eating quality <%= monthlySummary.eating_quality %> </li>
+    <li> Average generic mood on evening <%= monthlySummary.generic_mood_evening %> </li>
+    <% } %>
+    <p>
+
+    </p>>
+    <input type="submit" value="Update summaries!" />
+</form>
+
+<%- include('./partials/footer.ejs') %>
